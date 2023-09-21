@@ -1,0 +1,70 @@
+{
+  "name": "passive-face-liveness-ionic-nosentry",
+  "version": "1.0.0",
+  "description": "PassiveFaceLiveness",
+  "main": "dist/plugin.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "lint": "npm run prettier -- --check && npm run swiftlint -- lint",
+    "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "swiftlint": "node-swiftlint",
+    "build": "npm run clean && tsc && rollup -c rollup.config.js",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Combate à Fraude",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/android": "^3.4.0",
+    "@capacitor/core": "^3.4.0",
+    "@capacitor/ios": "^3.4.0",
+    "@ionic/prettier-config": "^1.0.0",
+    "@ionic/swiftlint-config": "^1.0.0",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "prettier": "^2.0.5",
+    "prettier-plugin-java": "^0.8.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^2.21.0",
+    "swiftlint": "^1.0.1",
+    "typescript": "~3.8.3"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^3.4.0"
+  },
+  "files": [
+    "dist/",
+    "ios/",
+    "android/",
+    "lib/",
+    "PassiveFaceLivenessPlugin.podspec"
+  ],
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native"
+  ],
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  },
+  "prettier": "@ionic/prettier-config",
+  "swiftlint": "@ionic/swiftlint-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/combateafraude/Ionic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/combateafraude/Ionic/issues"
+  },
+  "dependencies": {
+    "@capacitor/cli": "^3.3.4"
+  }
+}
