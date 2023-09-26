@@ -13,8 +13,9 @@ Pod::Spec.new do |s|
   s.source_files = 'ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
   s.ios.deployment_target  = '12.0'
   s.dependency 'Capacitor'
+  s.static_framework = true # Necessary by TFLite
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
-  s.swift_version = '5.1'
+  s.swift_version = '5.3.2'
   s.dependency 'PassiveFaceLivenessNoSentry', '6.0.0-rc02'
 end
